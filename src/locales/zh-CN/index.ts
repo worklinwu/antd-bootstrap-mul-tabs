@@ -1,0 +1,17 @@
+export default {
+  'login.label.username': '用户名',
+  'login.username.placeholder': '请输入用户名',
+  'login.username.required': '请输入用户名',
+  'login.username.format': '邮箱格式有误',
+  'login.username.length': '用户名长度在8-120个字符之间',
+  'login.label.password': '密码',
+  'login.password.placeholder': '请输入密码',
+  'login.password.required': '请输入密码',
+  'login.password.format': '密码格式不正确',
+  'login.password.length': '密码长度在8-20个字符之间',
+  'login.verifyCode.placeholder': '请输入验证码',
+  'login.verifyCode.required': '请输入验证码',
+  'login.verifyCode.length': '验证码长度为5个字符',
+  'login.btn.login': '登录',
+  'login.msg.loginError': '登录失败',
+};

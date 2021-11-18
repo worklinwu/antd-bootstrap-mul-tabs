@@ -1,0 +1,234 @@
+.page-tabs {
+  height: 48px;
+  background-color: #fff;
+  border-bottom: solid 1px #f0f2f5;
+  .page-tabs-bar {
+    position: relative;
+    height: 48px;
+    .page-tabs-bar-controls {
+      display: block;
+      float: left;
+      box-sizing: border-box;
+      height: 28px;
+      margin: 10px 24px 10px;
+      border: 1px solid #f0f2f5;
+      border-radius: 4px;
+      a {
+        position: relative;
+        display: block;
+        float: left;
+        width: 40px;
+        height: 26px;
+        color: #666;
+        font-size: 14px;
+        line-height: 26px;
+        text-align: center;
+        &:first-child:after {
+          position: absolute;
+          top: 8px;
+          right: 0;
+          width: 1px;
+          height: 12px;
+          content: '';
+          background-color: #f0f2f5;
+        }
+        &:hover {
+          color: #000;
+          cursor: pointer;
+        }
+        &.disabled,
+        &.disabled:hover {
+          color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+    .page-tabs-bar-nav {
+      position: absolute;
+      top: 0;
+      left: 124px;
+      right: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: all 0.2s;
+      &.show-controls {
+        padding: 0 24px;
+      }
+      .page-tabs-bar-nav-left,
+      .page-tabs-bar-nav-right {
+        position: absolute;
+        z-index: 10;
+        overflow: hidden;
+        top: 7px;
+        left: 0;
+        width: 20px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        transition: all 3s;
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #e8e8e8;
+        color: #262626;
+      }
+      .page-tabs-bar-nav-right {
+        left: auto;
+        right: 0;
+      }
+      .page-tabs-bar-nav-inner {
+        margin: 7px 0 0;
+        padding: 0 8px;
+        list-style: none;
+        display: inline-block;
+        transition: all 0.2s;
+        .tab-item {
+          position: relative;
+          display: inline-block;
+          box-sizing: border-box;
+          height: 40px;
+          line-height: 40px;
+          background: #fff;
+          border-radius: 4px 4px 0 0;
+          border: 1px solid #e8e8e8;
+          border-bottom: 1px solid #fff;
+          padding: 0 8px;
+          margin: 0 4px;
+          cursor: default;
+          user-select: none;
+          &:before {
+            border-right: 8px solid #e8e8e8;
+            left: -9px;
+            content: '';
+            border-top: 39px solid transparent !important;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            width: 0;
+            border-radius: 4px 4px 0 0;
+            pointer-events: none;
+          }
+          &:after {
+            content: '';
+            border-top: 39px solid transparent !important;
+            position: absolute;
+            top: 0;
+            border-left: 8px solid #e8e8e8;
+            right: -9px;
+            z-index: 0;
+            pointer-events: none;
+          }
+          .tab-item-inner {
+            position: relative;
+            display: flex;
+            min-width: 64px;
+            max-width: 160px;
+            padding-left: 2px;
+            padding-right: 2px;
+
+            &:before {
+              border-right: 8px solid #fff;
+              content: '';
+              border-top: 39px solid transparent !important;
+              position: absolute;
+              top: 0;
+              line-height: 40px;
+              left: -16px;
+              z-index: 3;
+              width: 0;
+            }
+
+            &:after {
+              content: '';
+              position: absolute;
+              border-left: 8px solid #fff;
+              border-top: 39px solid transparent;
+              top: 0;
+              line-height: 40px;
+              z-index: 2;
+              right: -16px;
+            }
+
+            .tab-item-icon {
+              display: inline-block;
+              position: relative;
+              vertical-align: -1px;
+              margin-right: 6px;
+            }
+            .tab-item-name {
+              flex: 1;
+              text-align: center;
+              color: rgba(0, 0, 0, 0.65);
+              max-width: 120px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            .tab-item-close {
+              position: relative;
+              display: block;
+              width: 14px;
+              height: 14px;
+              margin-top: 13px;
+              margin-right: -5px;
+              margin-left: 8px;
+              color: rgba(0, 0, 0, 0.45);
+              font-size: 12px;
+              vertical-align: middle;
+              transition: all 0.2s;
+              line-height: 1;
+              cursor: pointer;
+              &:hover:after {
+                content: '';
+                position: absolute;
+                left: -3px;
+                top: -3px;
+                background: #ccc;
+                border-radius: 50%;
+                z-index: -1;
+                width: 19px;
+                height: 19px;
+              }
+            }
+          }
+          // 激活状态
+          &.active {
+            background: #f0f2f5;
+            z-index: 4;
+            border-bottom-color: #f0f2f5;
+            .tab-item-close {
+              display: block !important;
+            }
+            &:before,
+            &:after {
+              border-color: #e8e8e8;
+            }
+            .tab-item-inner {
+              &:before {
+                border-color: #f0f2f5;
+                border-top-width: 40px !important;
+              }
+              &:after {
+                border-left-color: #f0f2f5;
+                border-top-width: 40px !important;
+              }
+            }
+            .tab-item-name {
+              color: #262626;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-tabs-content {
+  height: calc(100vh - 97px);
+  padding: 12px;
+  overflow: auto;
+  background-color: #f0f2f5;
+  .ka-wrapper,
+  .ka-content {
+    min-height: 100%;
+  }
+}

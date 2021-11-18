@@ -1,0 +1,41 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  :global {
+    .page-container-content > .ant-tabs {
+      margin: 0 24px;
+    }
+  }
+  .header {
+    position: relative;
+    height: 54px;
+    line-height: 54px;
+    border-bottom: solid 1px #eee;
+    padding: 0 16px;
+    background-color: #fff;
+    .title {
+      font-weight: bold;
+      color: #262626;
+      font-size: 16px;
+    }
+    .controls {
+      position: absolute;
+      right: 16px;
+      top: 0;
+      white-space: nowrap;
+    }
+  }
+
+  .content {
+    position: relative;
+  }
+}
+
+.footer {
+  background-color: #f0f2f5;
+  text-align: center;
+  color: #ccc;
+  padding: 40px 0;
+}

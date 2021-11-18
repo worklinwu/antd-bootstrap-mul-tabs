@@ -1,0 +1,94 @@
+@import '../../styles/theme.less';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  background-image: url('../../assets/images/login_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  margin-top: 12px;
+  padding: 32px 0;
+  flex: 1;
+
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      width: 190px;
+      height: 230px;
+    }
+    .hr {
+      width: 1px;
+      background-color: #eee;
+      margin: 0 60px;
+      height: 230px;
+    }
+    .main {
+      flex: 1;
+    }
+  }
+}
+
+.copyright {
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+@media (min-width: @screen-md-min) {
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+      padding: 0 90px;
+      border-radius: 8px;
+      width: 780px;
+      height: 420px;
+    }
+  }
+}
+@media (max-width: @screen-md-min) {
+  .content {
+    .card {
+      padding: 50px 20px;
+      margin: 0 20px;
+      flex-direction: column;
+
+      .logo {
+        width: 134px;
+        height: 160px;
+      }
+      .hr {
+        width: 100%;
+        margin: 40px 0;
+        height: 1px;
+      }
+    }
+  }
+}
+
+.desc {
+  font-size: @font-size-base;
+  color: @text-color-secondary;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.footer {
+  color: #fff;
+}

@@ -1,0 +1,24 @@
+@import '../../styles/theme.less';
+
+.iconWrapper {
+  display: inline-flex;
+}
+
+.icon {
+  cursor: default;
+}
+
+.link {
+  cursor: pointer;
+  &:hover {
+    color: @primary-color;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  &:hover {
+    color: @disabled-color;
+  }
+}
